@@ -38,6 +38,9 @@ public abstract class TestCase {
         }
     }
 
+    public void before() {}
+    public void after() {};
+
     /**
      * Runs all test methods of a TestCase class.
      */
@@ -47,7 +50,9 @@ public abstract class TestCase {
         for (Method m : methods) {
             try {
                 if (m.getName().startsWith(TEST_PREFIX)) {
+                    before();
                     m.invoke(this);
+                    after();
                     result.reportSuccess(m.getName());
                 }
             } catch (AssertException e) {

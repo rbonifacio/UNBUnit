@@ -29,7 +29,7 @@ public class DefaultRunnerTest {
         int failures = results.stream().map(result -> result.getFailures().size()).reduce(Integer::sum).get();
         int errors = results.stream().map(result -> result.getErrors().size()).reduce(Integer::sum).get();
 
-        Assert.assertEquals(2, success);
+        Assert.assertEquals(3, success);
         Assert.assertEquals(1, failures);
         Assert.assertEquals(0, errors);
     }
