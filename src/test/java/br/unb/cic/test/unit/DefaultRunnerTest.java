@@ -13,9 +13,10 @@ public class DefaultRunnerTest {
     @Test
     public void listTestCases() {
         DefaultRunner runner = new DefaultRunner();
-
-        Assert.assertTrue(!runner.listTestCases().isEmpty());
-        Assert.assertEquals(2, runner.listTestCases().size());
+        String packagePath = "br.unb.cic.test.unit.samples";
+        
+        Assert.assertTrue(!runner.listTestCases("br.unb.cic.test.unit.samples").isEmpty());
+        Assert.assertEquals(2, runner.listTestCases("br.unb.cic.test.unit.samples").size());
     }
 
 
@@ -23,7 +24,7 @@ public class DefaultRunnerTest {
     public void executeSampleTestes() {
         DefaultRunner runner = new DefaultRunner();
 
-        Set<TestResult> results = runner.runAllTests();
+        Set<TestResult> results = runner.runAllTests("br.unb.cic.test.unit.samples");
 
         int success = results.stream().map(result -> result.getSuccesses().size()).reduce(Integer::sum).get();
         int failures = results.stream().map(result -> result.getFailures().size()).reduce(Integer::sum).get();
