@@ -11,10 +11,16 @@ import java.util.Set;
  * from <code>TestCase</code>.
  */
 public class DefaultRunner extends TestRunner {
+
+    @Inject
+    public DefaultRunner(Set<Report> reports) {
+        super(reports);
+    }
+    
     @Override
-    public Set<TestCase> listTestCases() {
+    public Set<TestCase> listTestCases(String packagePath) {
         try {
-            Reflections reflections = new Reflections();
+            Reflections reflections = new Reflections(packagePath);
             Set<Class<? extends TestCase>> testCaseClasses = reflections.getSubTypesOf(TestCase.class);
             Set<TestCase> testCases = new HashSet<>();
             for (Class<? extends TestCase> c : testCaseClasses) {
