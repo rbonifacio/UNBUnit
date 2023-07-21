@@ -13,7 +13,9 @@ import java.util.Set;
 public class SuiteRunner extends TestRunner {
     private Set<Class<? extends TestCase>> testClasses;
 
-    public SuiteRunner() {
+    @Inject
+    public SuiteRunner(Set<Report> reports) {
+        super(reports);
         testClasses = new HashSet<>();
     }
 
@@ -29,7 +31,7 @@ public class SuiteRunner extends TestRunner {
     }
 
     @Override
-    public Set<TestCase> listTestCases() {
+    public Set<TestCase> listTestCases(String packagePath) {
         Set<TestCase> testCases = new HashSet<>();
         for (Class<? extends TestCase> c : testClasses) {
             try {
