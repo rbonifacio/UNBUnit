@@ -5,6 +5,7 @@ import br.unb.cic.test.unit.eh.AssertException;
 import br.unb.cic.test.unit.eh.AssertTrueException;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 /**
  * Define the root of the Test Case class hierarchy.

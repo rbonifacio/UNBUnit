@@ -1,5 +1,7 @@
 package br.unb.cic.test.unit;
 
+import com.google.inject.Inject;
+
 import java.util.HashSet;
 import java.util.Set;
 

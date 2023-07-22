@@ -1,6 +1,7 @@
 package br.unb.cic.test.unit;
 
 import br.unb.cic.test.unit.eh.TestCaseInstantiationError;
+import com.google.inject.Inject;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,10 +1,10 @@
 package br.unb.cic.test.unit;
 
+import br.unb.cic.test.unit.*;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import org.apache.commons.cli.*;
 
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -34,7 +34,7 @@ public class TestFrameworkCLI {
 
                 String type = cmd.getOptionValue(TYPE_OPTION);
 
-                Set<Report> reports = new HashSet<>();
+
 
 
 
